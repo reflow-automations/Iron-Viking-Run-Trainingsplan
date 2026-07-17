@@ -45,19 +45,19 @@
     {
       icon: "💃", title: "THE ARCADE", type: "ARCADE-type",
       intro: [
-        "A whole museum of retro games in Zoetermeer...",
+        "A whole museum of retro games in Zoetermeer... plus bubble tea. 🧋",
         PLAYER + " found the dance machine and did NOT hold back.",
       ],
       badge: "ARCADE BADGE",
       moves: [
-        { label: "DANCE BATTLE", her: NAME_LINE("DANCE BATTLE"), his: "High score, no contest. " + FOE + " is still recovering. 💃" },
-        { label: "HIGH SCORE", her: NAME_LINE("HIGH SCORE"), his: "Initials go right at the top. 🕹️" },
-        { label: "RETRO RUSH", her: NAME_LINE("RETRO RUSH"), his: "Zoetermeer's finest games, fully cleared." },
+        { label: "AIR HOCKEY SMASH", her: NAME_LINE("AIR HOCKEY SMASH"), his: "A merciless win. " + FOE + " is still looking for the puck. 🏒" },
+        { label: "DANCE MACHINE", her: NAME_LINE("DANCE MACHINE"), his: "Perfect streak — half the museum was watching. 💃" },
+        { label: "TEKKEN COMBO", her: NAME_LINE("TEKKEN COMBO"), his: "Flawless victory. " + FOE + " never saw the buttons coming. 🥋" },
       ],
       counters: [
-        FOE + " used AIR HOCKEY SLAM! Caught her off guard.",
-        FOE + " used DDR COUNTER-STEP! Kept up better than expected.",
-        FOE + " used CLAW MACHINE WIN! Handed her the prize anyway. 🧸",
+        FOE + " used MARIO KART VICTORY! First place. (" + PLAYER + " did NOT enjoy that one. 🏁)",
+        FOE + " used BUBBLE TEA BREAK! Sneaky recovery move. 🧋",
+        FOE + " used REMATCH REQUEST! Denied. But he had to try.",
       ],
     },
     {
@@ -74,27 +74,29 @@
       ],
       counters: [
         FOE + " used ARM AROUND SHOULDER! Smooth. Very smooth.",
-        FOE + " used \"WAIT, WHAT DID THEY SAY?\" Missed the whole scene.",
+        FOE + " used AI ART! " + PLAYER + " with Cubone, Eevee & Vulpix — instant smile, every time. 🎨",
         FOE + " used FINAL CUDDLE! Movie's over — nobody noticed.",
       ],
     },
     {
-      // She RECEIVED this one — Rogier gave the massage, so his lines carry the action.
+      // Role-reversed gym: ROGIER gives the massage, NOON wins by receiving it.
+      // His HP bar = his composure, melting a little more every round. He'd
+      // call this one a win for himself too — and he's not wrong.
       icon: "♨️", title: "RECOVERY DAY", type: "ZEN-type",
       intro: [
-        FOE + " showed up with warm oil and zero agenda.",
-        "Ten minutes in, " + PLAYER + " had officially left the building. (Mentally.)",
+        FOE + " showed up with warm massage oil and zero agenda.",
+        "A gym where " + PLAYER + " wins by doing... absolutely nothing. Her specialty unlocked.",
       ],
       badge: "ZEN BADGE",
       moves: [
-        { label: "AROMATHERAPY OIL", her: FOE + " used AROMATHERAPY OIL... on " + PLAYER + ".", his: "It's super effective! All tension: gone. " + PLAYER + " isn't moving for a while. ♨️" },
-        { label: "FULL RELAXATION", her: PLAYER + " sank fully into FULL RELAXATION mode.", his: "Officially horizontal. " + FOE + " has no comeback for that. 😌" },
-        { label: "ZEN MODE", her: PLAYER + " entered ZEN MODE — not moving for 20 minutes.", his: FOE + " wouldn't have it any other way." },
+        { label: "ACCEPT THE MASSAGE", her: PLAYER + " used ACCEPT THE MASSAGE! Best move of the week.", his: FOE + " answered with AROMATHERAPY OIL — and it's HIS composure bar that's dropping. ♨️" },
+        { label: "FULL RELAXATION", her: PLAYER + " used FULL RELAXATION! Officially horizontal.", his: "The more she melts, the harder " + FOE + " falls. It's super effective! 😌" },
+        { label: "ZEN MODE", her: PLAYER + " used ZEN MODE! Not moving for 20 minutes.", his: FOE + "'s composure: gone. Zero complaints from his side though." },
       ],
       counters: [
-        FOE + " used MORE OIL! No complaints.",
+        FOE + " used MORE OIL! " + PLAYER + " takes no damage. Only comfort.",
         FOE + " used SHOULDER FOCUS! Direct hit on a knot she didn't know she had.",
-        FOE + " used \"OKAY, DONE!\" Reluctantly stopped after way too long.",
+        FOE + " used \"HONESTLY? I WON THIS ROUND.\" ...He might have a point. 😏",
       ],
     },
     {
@@ -117,7 +119,13 @@
     },
   ];
   function NAME_LINE(move) { return PLAYER + " used " + move + "!"; }
-  const NEXT_TEASER = "Date 6: loading...";
+  // Revealed once all 5 badges are in the case — the real, physical prize
+  // ROGIER hands over the moment she reads this. 🦴
+  const PRIZE_LINES = [
+    "A wild CUBONE appeared... 🦴",
+    "3D-printed & hand-painted by " + FOE + ", just for " + PLAYER + ".",
+    "It's real. Ask him for it. RIGHT NOW. 💝",
+  ];
   /* ============================================================ */
 
   const $ = (s) => document.querySelector(s);
@@ -433,9 +441,10 @@
 
   async function showTrophy() {
     const box = $("#trophy-badges");
+    const prizeEl = $("#trophy-next");
     box.innerHTML = "";
+    prizeEl.textContent = "Unlocking...";
     gotoState("trophy");
-    $("#trophy-next").textContent = NEXT_TEASER;
     playVictory();
     burstSparkles(24, true);
     await fadeIn();
@@ -449,6 +458,19 @@
       requestAnimationFrame(() => el.classList.add("is-shown"));
       sfx("badge");
       await sleep(220);
+    }
+
+    // the real prize reveal — line by line, ending on "ask him for it"
+    await sleep(600);
+    prizeEl.textContent = "";
+    for (const line of PRIZE_LINES) {
+      const p = document.createElement("span");
+      p.className = "trophy__prize-line";
+      p.textContent = line;
+      prizeEl.appendChild(p);
+      jingle([784, 988, 1319]);
+      burstSparkles(8, true);
+      await sleep(1100);
     }
   }
 

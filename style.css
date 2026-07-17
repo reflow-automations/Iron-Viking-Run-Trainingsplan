@@ -298,6 +298,8 @@ body {
   background: rgba(0,0,0,.42); text-align: left; box-shadow: inset 0 0 0 2px rgba(255,255,255,.3);
 }
 .questbox__title { text-align: center; font-size: 3.2cqw; color: var(--gold); margin-bottom: 3cqw; letter-spacing: .5px; }
+.trophy__prize-line { display: block; text-align: center; line-height: 1.9; margin-bottom: 1.6cqw; animation: pop-in .4s ease both; }
+.trophy__prize-line:last-child { color: var(--gold); text-shadow: 0 0 10px rgba(255,210,63,.55); }
 .questbox__line  { font-size: 3cqw; color: #fff; text-align: center; line-height: 1.7; }
 
 .trophy__footer { font-size: 3cqw; color: #ffb0d0; animation: blink 1.2s steps(2) infinite; }
