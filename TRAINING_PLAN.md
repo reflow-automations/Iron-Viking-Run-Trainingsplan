@@ -2,12 +2,12 @@
 
 **Race day:** Saturday, April 10, 2027 · **Setup week:** Aug 11–23, 2026 · **Training start:** Monday, Aug 24, 2026 (~33 weeks)
 
-The Iron Viking is not a normal marathon: 42 km with ~100 obstacles (climbing, carrying, crawling, water, grip work). Good news: your base (calisthenics + parkour) is exactly what most marathon runners *lack*. What you need to build is the opposite: time on your feet. And because running is your weakest link **and** your knees are fragile, this plan builds up as slowly as the calendar allows. We have 33 weeks — there is zero need to rush, and the only thing that can genuinely kill this project is an injury in month two.
+The Iron Viking is not a normal marathon: 42 km with ~100 obstacles (climbing, carrying, crawling, water, grip work). Good news: your base (calisthenics + parkour) is exactly what most marathon runners *lack*. What you need to build is the opposite: time on your feet. Running is the weakest link, so that's where the structured build-up goes — steady, with plenty of margin, because the only thing that can genuinely kill this project is an injury halfway through.
 
-## Non-negotiables
+## Ground rules
 
-1. **Knees rule everything.** Never increase distance and intensity in the same week. Weekly volume grows max ~10%, and every 3rd–4th week is a down week (~60% volume).
-2. **Walking is a strategy, not a failure.** Run/walk intervals are the backbone of this plan *and* a legit race-day strategy — nobody runs the entire Iron Viking. You never have to feel bad about walking, on camera or off.
+1. **Increase one thing at a time.** Never distance and intensity in the same week. Weekly volume grows ~10%, and every 3rd–4th week is a down week (~60% volume).
+2. **Walking breaks are a strategy, not a failure.** They're a legit race-day tactic too — nobody runs the entire Iron Viking.
 3. **80%+ of all running is conversational pace.** If you can't talk, you're going too hard. (Convenient: you're talking to a camera anyway.)
 
 ## Fixed anchors (already in place, stay in place)
@@ -47,13 +47,13 @@ Build fixed routes with fixed "obstacle points" — less thinking, and viewers s
 ### Phase 0 — Setup (Aug 11–23)
 No training pressure. Buy the running vest, download **Strava** (record every session; the screenshots are your proof-of-work in the videos), create the YouTube + Instagram accounts, test the filming setup on a walk. Film all of it — the setup *is* Day 1–5 content.
 
-### Phase 1 — Walk-run foundation (Aug 24 – early Nov, ~10 weeks)
-Goal: teach tendons and knees to tolerate running. Zero ego phase.
-- Start: **jog 1 min / walk 2 min × 7** (~20 min). That's it. It should feel embarrassingly easy — that's the point.
-- Progress only the jog portion, and only when the knees stayed quiet for two sessions in a row: 1/2 → 2/2 → 3/2 → 5/2 → 8/2…
-- Sunday: 60–90 min **hike** (loaded backpack later on). Hiking is elite base-building for an OCR with zero knee spikes.
-- **September vacation week: this is a planned hike week.** Vacation hikes count fully as training — film them, it's a content week, not a lost week.
-- End of phase 1: ~25–30 min continuous easy jogging, Sunday hike-jog mix up to ~8 km.
+### Phase 1 — Foundation (Aug 24 – early Nov, ~10 weeks)
+Goal: teach tendons and joints to tolerate running volume. You're fit, you're just not run-conditioned yet — those are different things, and tendons adapt slower than lungs.
+- Start: **easy runs of 1.5–2 km**, three per week (Mon/Wed missions + Sunday). Walk breaks whenever you feel like it, zero shame.
+- Grow the runs by ~0.5–1 km per week when the week felt good: 2 → 3 → 4 → 5 km…
+- Sunday becomes the long session: alternate a longer easy run with a 60–90 min **hike** (loaded backpack later on) — hiking is elite OCR base-building.
+- **Vacation hikes (September) count fully as training.** Film them; different scenery, same journey.
+- End of phase 1: ~5–6 km comfortable continuous running, Sunday sessions up to ~8 km.
 
 ### Phase 2 — Running base (Nov – mid Jan, ~10 weeks)
 Goal: build the engine, still all easy. Winter = dark and cold, so this is where the channel keeps you honest ("Day 94, it's raining, going anyway").
@@ -75,19 +75,15 @@ Goal: simulate what April 10 demands.
 - Final week: two short easy runs, light calisthenics, skip or go easy at parkour on Apr 3
 - **Sat Apr 10: race day.** Goal #1 (and only): finish. Time goals are for the sequel.
 
-## Knee protocol
+## Knee & shoulder maintenance
 
-- **Support strength 2×/week** (fold into Tuesday + the Thursday mini-session): step-downs, split squats, calf raises, hamstring bridges. This is the single most evidence-backed thing for runner's knees.
-- **Cadence ~170+ with short steps** — less impact per stride. Soft surfaces (trail, grass) when possible; you'll race on trails anyway.
-- **Proper cushioned running shoes, fitted at a running store** (film it — gear videos work). Race shoes (trail, grip) get broken in during phase 3.
-- **Traffic light:** niggle that fades while running = amber, finish easy and watch it. Pain that changes your stride or is still there next morning = red, swap the next run(s) for cycling/hiking. Sharp pain = stop, that day.
-- A lost week is never made up. Rejoin the schedule where it is; never stack.
+The knees and shoulders have a history — not a limitation, just something to maintain along the way:
 
-## Shoulder notes (Tuesday)
-
-- Dead hangs are your friend: grip + generally good for shoulder health. Build duration gradually.
-- Skip deep dips/ranges when irritated; prioritize scapular control work (scap pulls, rows).
-- Heavy carries (farmer's walks) train grip and are shoulder-friendly. They're also literally a race obstacle.
+- **Support strength 2×/week** (folded into Tuesday + the Thursday mini-session): step-downs, split squats, calf raises, hamstring bridges. Cheap insurance, and it makes you better at obstacles anyway.
+- **Higher cadence, shorter steps, soft surfaces when convenient** — less impact per stride, and you'll race on trails anyway.
+- **Proper running shoes, fitted at a running store** (film it — gear videos work). Race shoes (trail, grip) get broken in during phase 3.
+- **Simple rule:** a niggle that fades while running — run on. Pain that changes your stride or is still there next morning — swap the next run for a hike or bike ride and pick the schedule back up where it is. Never stack missed sessions.
+- Shoulders on Tuesday: dead hangs and carries are friends (grip + shoulder health + literally race obstacles); go easy on deep dips when irritated.
 
 ## Measurement moments (= content)
 

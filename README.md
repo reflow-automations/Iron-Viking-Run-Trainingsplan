@@ -8,7 +8,7 @@ This repo is home base for the whole journey: the training plan, the content pla
 
 | File/folder | What it is |
 |---|---|
-| [`TRAINING_PLAN.md`](TRAINING_PLAN.md) | The full training plan — built around fixed Tuesday calisthenics and Saturday parkour, with the slowest safe running build-up (bad knees = rule #1) |
+| [`TRAINING_PLAN.md`](TRAINING_PLAN.md) | The full training plan — built around fixed Tuesday calisthenics and Saturday parkour, with a steady running build-up |
 | [`content/CONTENT_PLAN.md`](content/CONTENT_PLAN.md) | YouTube/Instagram strategy, video formats, filming setup while running |
 | [`content/CHANNEL_RESEARCH.md`](content/CHANNEL_RESEARCH.md) | Analysis of channels that made this format huge — what to steal, what to skip |
 | [`automation/PIPELINE.md`](automation/PIPELINE.md) | Spec for the pipeline: raw clips in → shorts + metadata out → auto-post |
@@ -24,4 +24,6 @@ No boring mileage-grinding. Every run is a **mission run**: running with challen
 
 ## Channel hook
 
-> "I can barely run 5K and my knees are wrecked. I'm training until I can finish the hardest obstacle race in the Netherlands — 42 km, 100+ obstacles. This is Day 1."
+> "I'm training until I can finish the hardest obstacle race in the Netherlands — 42 km, 100+ obstacles. This is Day 1."
+
+The challenge is the brand — one fixed sentence, said the same way, every single video (see `content/CHANNEL_RESEARCH.md` for why).

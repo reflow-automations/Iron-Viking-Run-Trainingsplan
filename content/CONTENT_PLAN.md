@@ -1,6 +1,8 @@
 # Content Plan — YouTube Shorts + Instagram (English)
 
-**Channel concept:** one guy, bad knees, can barely run — training in public until he finishes a 42 km obstacle race. The viewer follows the journey in near-daily shorts. All content in **English** (10× the audience for this genre). The channel doubles as the accountability machine.
+**Channel concept:** one guy training in public until he finishes a 42 km obstacle race with 100+ obstacles. The viewer follows the journey in near-daily shorts. All content in **English** (10× the audience for this genre). The channel doubles as the accountability machine.
+
+**The premise sentence** (the single most important branding decision, stolen from the reference channels): one fixed line, spoken the same way at the top of *every* video — "Day X of training until I can finish a 42 km obstacle race." Challenge + stakes in the first second. The knees exist and can show up as an honest detail in a video now and then, but they are *not* the brand — the challenge is.
 
 ## Day counting (important)
 
@@ -18,8 +20,10 @@ This survives skipped days, schedule changes, everything.
 4. **Monthly check** — same route, same framing: "this is what I look like on Day X", time on screen. After a few months, cut comparison shorts (Day 1 vs Day 90) — this format hits hardest.
 5. **Parkour/calisthenics wins & fails** — Saturday material. Fails are gold; don't cut them.
 6. **Bad-weather motivation** — "Day 94. It's raining. Going anyway." The winter phase is the best storyline.
-7. **Vacation hikes (September)** — journey doesn't pause, scenery changes. Loaded hikes in the mountains = training + best-looking footage of the whole project.
-8. **Explainers** — why this race, what is the Iron Viking, what's my plan, my knee situation. Max one per week.
+7. **Vacation hikes (September)** — journey doesn't pause, scenery changes. Hikes count as training, and mountain footage is the best-looking material of the whole project.
+8. **Explainers** — why this race, what is the Iron Viking, what's my plan. Max one per week.
+
+**The signature shot (do this from Day 1):** every session, film one 3-second clip of the same action from the same angle — e.g. running toward the camera on your street, or the pull-up bar at "the bridge". Costs nothing daily, but after months you can rapid-cut through seasons, weather and outfits in the monthly recaps — the single strongest visual proof of consistency in this genre (it's the backbone of gagiegram's viral recaps).
 
 **CTA in every video, short:** "Follow the journey — race day I'm running all 42." Don't beg for subs; the promise is the reason to follow.
 
@@ -37,7 +41,7 @@ The whole system lives or dies on: **phone with you, one button, talk, done.** N
 - **Selfie mode, arm extended, talking while running** is 90% of the footage. Accept the shake — that's the genre.
 - **Mini tripod or clip mount** (fits in the vest pocket) for mission shots: set phone down, do the challenge, grab it, keep going. Third-person shots of you going over a wall are your best clips.
 - **Wind is the only real audio enemy:** a foam windscreen/deadcat over the mic (a few euros) or just talk close to your mouth. No more gear than this.
-- **Strava runs in the background** during every session — the screenshot is content (see formats).
+- **Strava runs in the background** during every session — the screenshot is content (see formats). **Strava's free tier is all we need:** GPS recording, distance/time/pace, maps and sharing are free; the paid subscription only adds advanced analytics we don't use. (Free alternatives if ever needed: Nike Run Club, Adidas Running.)
 - **Battery/storage:** airplane mode during the run (Strava works fine offline with GPS), 1080p is plenty.
 - Also just speak your thoughts and tasks into the phone mid-run — the pipeline extracts clips *and* to-dos from the transcript (see `automation/PIPELINE.md`).
 

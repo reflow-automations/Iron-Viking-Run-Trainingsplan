@@ -1,6 +1,6 @@
 # Channel Research — what makes this genre work
 
-Goal: steal what works from channels that got big with the "Day X training journey" format, before posting video #1. First findings below (based on YouTube search + transcript analysis of top performers, Aug 2026). The deep-dive on the two reference channels follows once they're named.
+Goal: steal what works from channels that got big with the "Day X training journey" format, before posting video #1. Based on YouTube niche research + transcript analysis of top performers, plus a deep-dive on the two reference accounts: **@dailyrepsguy** and **@gagiegram** (Aug 2026).
 
 ## Finding 1 — the raw daily log does NOT go viral (and that's fine)
 
@@ -32,17 +32,43 @@ Most running-journey shorts are visually identical (guy on a road, sweaty selfie
 
 1. **Obstacles.** Mission runs = walls, pull-ups, carries, crawls — visually different every single video.
 2. **A harder, rarer goal.** Everyone runs marathons on YouTube; a 42 km / 100+ obstacle race is a stronger "wait, what?" hook.
-3. **Real stakes.** Bad knees + "can barely run 5K" = genuine underdog arc. The top hooks above are all built on exactly this contrast — we don't have to fake it.
+3. **Real stakes.** "Not a runner" taking on a 42 km obstacle race = genuine underdog arc. The top hooks above are all built on exactly this contrast — we don't have to fake it.
 4. **Parkour/calisthenics footage** (Saturday fails included) as a second content stream most running channels can't offer.
 
-## The two reference channels — TO BE NAMED
+## Reference channel 1 — @dailyrepsguy (Skye Mackintosh)
 
-> **⚠️ Rogier: drop the names/links of the 1–2 channels you want to steal from here.**
+**Stats (Aug 2026):** ~260K Instagram followers, ~496 posts, daily reels. Started ~Aug 25, 2025 → 260K followers in under a year, posting every single day.
 
-Deep-dive process per channel (Claude Code runs this):
-- [ ] Channel stats: subs, total views, upload cadence, age of channel when it took off
-- [ ] All shorts sorted by popular → what % is daily log vs milestone vs explainer?
-- [ ] Transcripts of their top 10 videos → hook formulas, video structure, CTA phrasing
-- [ ] Title + thumbnail patterns of the outliers
-- [ ] What they did in week 1–4 specifically (cold-start playbook)
-- [ ] What we deliberately do differently
+**The formula:**
+- **One identical premise sentence opens every single video:** *"X days of seeing if I can get jacked in under 20 minutes a day."* Day number first, then challenge, then the constraint. Never varies. That sentence IS the brand.
+- The constraint ("under 20 minutes, at home") doubles as an **accessibility promise to the viewer**: "you could do this too." Our version of that promise: *"I'm not a runner — if I can build to this, you can."*
+- **Engagement variance is the business model:** baseline days get 300–1,500 likes, but outliers hit 13K, 27K, 98K and even 233K likes (day 351!). A daily video is a daily lottery ticket, and one winner pays for months of quiet days. You cannot know in advance which day pops — so you post every day.
+- Monetization once big: DM-keyword funnel ("DM me '20'") into coaching. Not relevant now; noted for later.
+
+**Steal:** the never-changing premise sentence · day number always first · posting daily regardless of views · the constraint-as-promise framing.
+
+## Reference channel 2 — @gagiegram (Gage Nelson)
+
+**Stats (Aug 2026):** ~2M Instagram followers. Ran 2,400+ miles, lost 200+ lbs. Premise: **"1 follow = 1 mile"** — every follower adds a mile he has to run.
+
+**Watched and broke down his Day 280 recap reel (26 sec) beat by beat:**
+1. **0:00–0:03 Hook:** "Fourteen months ago, I made a promise to the internet." Bold single pop-on words on screen ("fourteen", "promise"). Already running in frame from second zero.
+2. **0:03–0:08 Goal:** "I wanted to lose 200 pounds."
+3. **0:08–0:12 Conflict + self-deprecation:** didn't know how to start, calls his own solution "really stupid" → curiosity.
+4. **0:12–0:15 Premise:** "One follow equals one mile."
+5. **0:15–0:20 Proof:** stats overlay (2,095 miles, 190 lbs lost) + before/after split-screen — the climax.
+6. **0:21–0:26 Re-hook + gamified CTA:** "I'm not done" + follow button graphic + "follow to make me suffer."
+
+**Craft details:** ~15+ cuts in 26 seconds; shots cycle through snow/sun/autumn/rain and different outfits — *visual proof of consistency* (this is why we film a signature shot every day); pop-on single-word captions, bold sans-serif, centered; tone gritty-but-inspirational, visibly exhausted = authentic.
+
+**His daily-video hooks are story lines, not stats:** "The internet thinks I'm lying…", "I should have kept my mouth shut", "Fourteen months ago…". The day number lives in the caption/on-screen; the spoken opener is drama.
+
+**Steal:** the recap structure above as our monthly-banger template · story-first spoken hooks on dailies · audience-driven stakes ("follow to make me suffer" flips the CTA from begging to a game) · stats overlays as proof.
+
+**Consider (decide before Day 1):** our own audience-stakes mechanic in gagiegram style — e.g. *"1 follow = 1 pull-up"* (fits the obstacle/mission concept perfectly and calisthenics volume is exactly what the race needs) or followers voting on the next mission-run challenge. This is gagiegram's entire growth engine; even a light version is worth it.
+
+## What we deliberately do differently
+
+- Our race has a **date and a finish line** (April 2027) — a story with an ending beats an open-ended streak for narrative tension. Use it in milestone videos ("the race is getting closer"), while keeping the daily premise sentence open-ended.
+- **Obstacles give visual variety** both references lack — gagiegram is 100% running shots, dailyrepsguy is 100% home workouts. Our mission runs mix both plus parkour.
+- We automate the edit/post pipeline — their daily grind is our `automation/PIPELINE.md`.
