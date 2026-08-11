@@ -1,22 +1,27 @@
 # Road to Iron Viking 🛡️🏃
 
-**Doel: op zaterdag 10 april 2027 de Iron Viking Run finishen — 42 km obstacle run.**
+**Goal: finish the Iron Viking Run — 42 km obstacle run — on Saturday, April 10, 2027.**
 
-Vanaf 11 augustus 2026 zijn dat **242 dagen**. Dit project is de thuisbasis van de hele reis: het trainingsplan, het contentplan (YouTube Shorts + Instagram) en de automation-pipeline die ruwe clips omzet in shorts en ze automatisch post.
+This repo is home base for the whole journey: the training plan, the content plan (YouTube Shorts + Instagram, all in English) and the automation pipeline that turns raw phone clips into shorts and posts them automatically.
 
-## Structuur
+## Structure
 
-| Bestand/map | Wat het is |
+| File/folder | What it is |
 |---|---|
-| [`TRAININGSPLAN.md`](TRAININGSPLAN.md) | Het volledige 34-weekse trainingsplan, gebouwd rond de vaste dinsdag-calisthenics en zaterdag-parkour |
-| [`content/CONTENTPLAN.md`](content/CONTENTPLAN.md) | YouTube/Instagram-strategie, video-formats en de film-setup tijdens het rennen |
-| [`automation/PIPELINE.md`](automation/PIPELINE.md) | Spec voor de pipeline: ruwe clips in → shorts + metadata uit → automatisch posten |
-| [`logboek/`](logboek/) | Dagelijkse logs ("dag X van 242") — voer voor de video's én om progressie te zien |
+| [`TRAINING_PLAN.md`](TRAINING_PLAN.md) | The full training plan — built around fixed Tuesday calisthenics and Saturday parkour, with the slowest safe running build-up (bad knees = rule #1) |
+| [`content/CONTENT_PLAN.md`](content/CONTENT_PLAN.md) | YouTube/Instagram strategy, video formats, filming setup while running |
+| [`content/CHANNEL_RESEARCH.md`](content/CHANNEL_RESEARCH.md) | Analysis of channels that made this format huge — what to steal, what to skip |
+| [`automation/PIPELINE.md`](automation/PIPELINE.md) | Spec for the pipeline: raw clips in → shorts + metadata out → auto-post |
+| [`log/`](log/) | Daily logs ("Day X") — fuel for the videos and for tracking progress |
 
-## Het idee in één alinea
+## The idea in one paragraph
 
-Geen saaie kilometervreterij. Elke run is een **mission run**: rennen met opdrachten onderweg (pull-ups bij een speeltuin, muurtje klimmen, iets dragen, trap-sprints) — precies wat de Iron Viking straks van je vraagt, want die race is rennen + ~100 obstakels. De telefoon gaat mee, alles wordt gefilmd, en de pipeline maakt er shorts van. Het kanaal is de stok achter de deur: publiek beloven dat je finisht = niet meer kunnen stoppen.
+No boring mileage-grinding. Every run is a **mission run**: running with challenges along the way (pull-ups at a playground, climbing a wall, carrying something heavy, stair sprints) — exactly what the Iron Viking demands, because that race is running plus ~100 obstacles. The phone comes along, everything gets filmed, and the pipeline turns it into shorts. The channel is the accountability machine: promising an audience you'll finish means you can't quit.
 
-## Kanaal-hook
+## Day counting
 
-> "Ik heb 242 dagen om klaar te zijn voor de zwaarste obstacle run van Nederland. Dit is dag 1."
+**"Day X" is an episode counter, not a calendar.** Every training/content day = previous day + 1. Skipped a day? Nothing breaks — the next video is simply the next number. The countdown phrase is always relative: *"training until the Iron Viking Run in April."*
+
+## Channel hook
+
+> "I can barely run 5K and my knees are wrecked. I'm training until I can finish the hardest obstacle race in the Netherlands — 42 km, 100+ obstacles. This is Day 1."

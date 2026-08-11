@@ -1,48 +1,62 @@
-# Automation-pipeline — van ruwe clips naar geposte shorts
+# Automation Pipeline — from raw clips to posted shorts
 
-Doel: Rogier levert alleen ruwe clips aan; de rest is automatisch. Dit document is de spec voor het (bestaande) Claude Code video-edit project, zodat dat project precies weet wat het moet bouwen/doen.
+Goal: Rogier only supplies raw clips; everything else is automatic. This document is the spec for the (existing) Claude Code video-edit project.
 
-## De keten
+## The chain
 
 ```
-telefoon ──sync──► inbox/           (ruwe clips per dag)
-                     │
-                     ▼
-              [Claude Code edit-project]
-              1. transcriberen (Whisper) van alle clips
-              2. clips selecteren + knippen tot short (9:16, 20–60 sec)
-              3. ondertitels branden (gesproken tekst = captions)
-              4. "Dag X van 242" opener/overlay op basis van de datum
-              5. metadata genereren: titel, beschrijving, hashtags
-                     │
-                     ├──► output/YYYY-MM-DD/short-*.mp4 + metadata.json
-                     │
-                     ▼
-              [posten]
-              • YouTube: upload via YouTube Data API (eigen script, bestaat al als
-                Claude Code project)
-              • Instagram: via het social-bundle account (20 posts/maand gratis tier)
-                     │
-                     ▼
-              [bonus] transcript → taakjes eruit halen
-              Alles wat tijdens het rennen wordt ingesproken als "ik moet nog…" /
-              "taakje: …" wordt een taak (bijv. in ClickUp gezet).
+phone ──cloud sync──► inbox/          (raw clips, per day)
+                        │
+                        ▼
+                 [Claude Code edit project]
+                 1. transcribe every clip (Whisper)
+                 2. select + cut into shorts (9:16, 20–60 sec)
+                 3. burn in captions (spoken word = captions)
+                 4. "Day X" opener/overlay (see day counter below)
+                 5. optional Strava screenshot as proof overlay/end card
+                 6. generate metadata: title, description, hashtags (English)
+                        │
+                        ├──► output/day-XXX/short-*.mp4 + metadata.json
+                        │
+                        ▼
+                 [posting]
+                 • YouTube: upload via YouTube Data API (own script, exists as
+                   Claude Code project)
+                 • Instagram: via the social-bundle account (20 posts/month free tier)
+                        │
+                        ▼
+                 [bonus] transcript → task extraction
+                 Anything spoken mid-run like "task: …" / "I still need to…"
+                 becomes a to-do (e.g. pushed to ClickUp).
 ```
 
-## Afspraken die de pipeline simpel houden
+## Day counter (sequential, NOT date-based)
 
-- **Dagnummer is afleidbaar uit de datum:** dag 1 = 12 augustus 2026, racedag = dag 242 (10 april 2027). Geen handmatige nummering: `dag = datum − 2026-08-11`.
-- **Bestandsnamen doen er niet toe** — de opnamedatum uit de metadata van de clip is leidend.
-- **Gesproken woord stuurt de edit.** Zeg tijdens het filmen gewoon "dit is de opener" of "clip dit" — het transcript is voor de editor de beste selectiehint.
-- **Trigger-woorden voor taken:** alles na "taakje" of "ik moet nog" in het transcript wordt een to-do.
-- **Niks is live tot het gepost is door de pipeline** — geen handmatige uploads tussendoor, anders raakt de dag-nummering en de 20/maand-verdeling in de war.
+Days will get skipped — vacation, sick days, life. That must never break the numbering.
 
-## Nog te regelen (checklist)
+- The pipeline keeps a state file, e.g. `state.json`: `{ "last_day": 37 }`.
+- Every day that produces at least one posted video: `day = last_day + 1`, then update the state file.
+- A calendar day with no footage simply doesn't get a number. No gaps, no math on dates, nothing to correct.
+- Scripts/overlays always use the open phrasing: **"Day X of training for the Iron Viking Run in April"** — never a computed days-remaining countdown.
+- Multiple shorts from the same session share the same day number.
 
-- [ ] Cloud-sync van telefoon naar `inbox/` (bijv. gedeelde map) zodat overzetten geen handeling is
-- [ ] YouTube-kanaal aanmaken + API-credentials (OAuth) voor het uploadscript
-- [ ] Nieuw Instagram-account aanmaken + koppelen aan social-bundle account
-- [ ] Zelfde handle claimen op YouTube én Instagram
-- [ ] Edit-project de "Dag X van 242"-overlay en captions-stijl geven (één vaste stijl, herkenbaarheid > variatie)
-- [ ] Verdeling bepalen: welke shorts naar de 20 gratis Instagram-slots per maand gaan (beste 5 per week)
-- [ ] Taken-integratie: transcript-to-do's naar ClickUp
+## Conventions that keep the pipeline simple
+
+- **File names don't matter** — recording timestamps from clip metadata determine grouping into a "session".
+- **Spoken word drives the edit.** Say "this is the opener" or "clip this" while filming — the transcript is the editor's best selection hint.
+- **Task trigger words:** anything after "task" / "I still need to" in the transcript becomes a to-do.
+- **Nothing goes live except through the pipeline** — no manual uploads in between, or the day counter and the 20/month Instagram budget get out of sync.
+- **Everything output in English:** captions, titles, descriptions, hashtags.
+
+## Setup checklist (setup week: Aug 11–23)
+
+- [ ] Cloud sync phone → `inbox/` (shared folder) so transferring isn't a manual step
+- [ ] Download Strava, test-record a walk
+- [ ] Buy running vest with chest phone pocket + mini tripod/clip mount + foam windscreen
+- [ ] Check handle availability, then create YouTube channel + new Instagram account (same handle)
+- [ ] YouTube API credentials (OAuth) for the upload script
+- [ ] Connect Instagram to the social-bundle account
+- [ ] Give the edit project the "Day X" overlay + one fixed caption style (recognizability > variety)
+- [ ] Implement `state.json` day counter
+- [ ] Task extraction → ClickUp
+- [ ] Watch-and-steal analysis of reference channels → `content/CHANNEL_RESEARCH.md`
