@@ -1,6 +1,8 @@
 # Training Plan — Iron Viking Run, April 10, 2027
 
-**Race day:** Saturday, April 10, 2027 · **Setup week:** Aug 11–23, 2026 · **Training start:** Monday, Aug 24, 2026 (~33 weeks)
+**Race day:** Saturday, April 10, 2027 (fixed) · **Training weeks available:** ~33 if you start mid-/late August 2026
+
+Phases below are counted in **weeks from your actual start**, not calendar dates — starting a few days or a week later changes nothing. There's slack built in: even starting in September leaves plenty of runway.
 
 The Iron Viking is not a normal marathon: 42 km with ~100 obstacles (climbing, carrying, crawling, water, grip work). Good news: your base (calisthenics + parkour) is exactly what most marathon runners *lack*. What you need to build is the opposite: time on your feet. Running is the weakest link, so that's where the structured build-up goes — steady, with plenty of margin, because the only thing that can genuinely kill this project is an injury halfway through.
 
@@ -44,10 +46,10 @@ Build fixed routes with fixed "obstacle points" — less thinking, and viewers s
 
 ## The phases
 
-### Phase 0 — Setup (Aug 11–23)
-No training pressure. Buy the running vest, download **Strava** (record every session; the screenshots are your proof-of-work in the videos), create the YouTube + Instagram accounts, test the filming setup on a walk. Film all of it — the setup *is* Day 1–5 content.
+### Phase 0 — Setup (done when the checklist in `START_HERE.md` is done)
+Gear, Strava, accounts, file transfer. Film all of it — the setup *is* Day 1–5 content.
 
-### Phase 1 — Foundation (Aug 24 – early Nov, ~10 weeks)
+### Phase 1 — Foundation (weeks 1–10)
 Goal: teach tendons and joints to tolerate running volume. You're fit, you're just not run-conditioned yet — those are different things, and tendons adapt slower than lungs.
 - Start: **easy runs of 1.5–2 km**, three per week (Mon/Wed missions + Sunday). Walk breaks whenever you feel like it, zero shame.
 - Grow the runs by ~0.5–1 km per week when the week felt good: 2 → 3 → 4 → 5 km…
@@ -55,14 +57,14 @@ Goal: teach tendons and joints to tolerate running volume. You're fit, you're ju
 - **Vacation hikes (September) count fully as training.** Film them; different scenery, same journey.
 - End of phase 1: ~5–6 km comfortable continuous running, Sunday sessions up to ~8 km.
 
-### Phase 2 — Running base (Nov – mid Jan, ~10 weeks)
+### Phase 2 — Running base (weeks 11–20, roughly Nov–mid Jan)
 Goal: build the engine, still all easy. Winter = dark and cold, so this is where the channel keeps you honest ("Day 94, it's raining, going anyway").
 - Mon/Wed: 30–45 min easy, missions included
 - Sun long run: 8 → ~14–16 km, run/walk allowed always (e.g. run 9 min / walk 1 min)
 - Wed gets *light* structure late in the phase: strides (4× 20 sec faster, full recovery) — no hard intervals this cycle; they're the highest knee-risk sessions and a finisher doesn't need them
 - Weekly volume: ~20 → ~35 km
 
-### Phase 3 — Race-specific (mid Jan – mid Mar, ~9 weeks)
+### Phase 3 — Race-specific (weeks 21–29, roughly mid Jan–mid Mar)
 Goal: simulate what April 10 demands.
 - Sunday becomes the **Viking long run**: long *and* with missions built in, especially in the final third. 16 → **24–28 km** max (longest run ~4 weeks out). With run/walk strategy and obstacle breaks, that's enough to finish 42 km — going longer trades knee risk for marginal gain.
 - Try one or two back-to-back weekends: Saturday parkour + Sunday long run = practicing on tired legs
@@ -70,9 +72,9 @@ Goal: simulate what April 10 demands.
 - Consider a dress rehearsal: a shorter OCR (e.g. a 19 km Strong Viking) in Feb/Mar — also great content
 - Peak volume: ~40–45 km/week
 
-### Phase 4 — Taper (mid Mar – Apr 10, 3 weeks)
+### Phase 4 — Taper (final 3 weeks before April 10)
 - Volume: 75% → 50% → 30%, keep short strides, drop everything hard
-- Final week: two short easy runs, light calisthenics, skip or go easy at parkour on Apr 3
+- Final week: two short easy runs, light calisthenics, skip or go easy at parkour the Saturday before
 - **Sat Apr 10: race day.** Goal #1 (and only): finish. Time goals are for the sequel.
 
 ## Knee & shoulder maintenance

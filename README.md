@@ -8,6 +8,8 @@ This repo is home base for the whole journey: the training plan, the content pla
 
 | File/folder | What it is |
 |---|---|
+| **[`START_HERE.md`](START_HERE.md)** | **👈 Open this one.** What's left before Day 1, and the daily routine on one page |
+| [`content/SCRIPTS.md`](content/SCRIPTS.md) | What to actually say: Day 1 script, daily template, hook bank, monthly recap structure |
 | [`TRAINING_PLAN.md`](TRAINING_PLAN.md) | The full training plan — built around fixed Tuesday calisthenics and Saturday parkour, with a steady running build-up |
 | [`content/CONTENT_PLAN.md`](content/CONTENT_PLAN.md) | YouTube/Instagram strategy, video formats, filming setup while running |
 | [`content/CHANNEL_RESEARCH.md`](content/CHANNEL_RESEARCH.md) | Analysis of channels that made this format huge — what to steal, what to skip |
