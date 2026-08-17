@@ -1,43 +1,33 @@
-# THE NOON LEAGUE 🏆
+# Road to Iron Viking 🛡️🏃
 
-A retro Pokémon Gym-League style recap of the first 5 dates. Pure HTML/CSS/JS,
-no build step, no dependencies, no copyrighted assets.
+**Goal: finish the Iron Viking Run — 42 km obstacle run — on Saturday, April 10, 2027.**
 
-## The game
+This repo is home base for the whole journey: the training plan, the content plan (YouTube Shorts + Instagram, all in English) and the automation pipeline that turns raw phone clips into shorts and posts them automatically.
 
-5 real gym battles, one per date. Each gym has a "Gym Leader ROGIER" (typed,
-e.g. BILLIARDS-type, ARCADE-type...) with his own HP bar, and NOON gets her
-own HP bar and level too. Per gym:
+## Structure
 
-- 3 moves to choose from, in any order (the first is the glowing "signature"
-  move). Using all 3 clears the gym.
-- NOON always moves first and always lands her hit — she's simply better.
-- Gym Leader ROGIER answers with a scripted comeback after each of her moves,
-  chipping a little of her HP so it's a real Pokémon-style back-and-forth —
-  he just never chips enough to matter.
-- Clearing all 3 moves awards a badge. After 5 gyms: the Badge Case /
-  League Champion screen, with a teaser for the next date.
+| File/folder | What it is |
+|---|---|
+| **[`START_HERE.md`](START_HERE.md)** | **👈 Open this one.** What's left before Day 1, and the daily routine on one page |
+| [`day-one.html`](day-one.html) | The same page, styled — open it in a browser, works offline, checkboxes stick |
+| [`CLAUDE.md`](CLAUDE.md) | Full project brief and decisions made — context for any new Claude Code session |
+| [`content/SCRIPTS.md`](content/SCRIPTS.md) | What to actually say: Day 1 script, daily template, hook bank, monthly recap structure |
+| [`TRAINING_PLAN.md`](TRAINING_PLAN.md) | The full training plan — built around fixed Tuesday calisthenics and Saturday parkour, with a steady running build-up |
+| [`content/CONTENT_PLAN.md`](content/CONTENT_PLAN.md) | YouTube/Instagram strategy, video formats, filming setup while running |
+| [`content/CHANNEL_RESEARCH.md`](content/CHANNEL_RESEARCH.md) | Analysis of channels that made this format huge — what to steal, what to skip |
+| [`automation/PIPELINE.md`](automation/PIPELINE.md) | Spec for the pipeline: raw clips in → shorts + metadata out → auto-post |
+| [`log/`](log/) | Daily logs ("Day X") — fuel for the videos and for tracking progress |
 
-## Add a new date/gym
+## The idea in one paragraph
 
-Open `game.js` and append one object to the `GYMS` array at the top: an
-`intro` (2 typed lines), a `badge` name, exactly 3 `moves` ({label, her, his}),
-and 3 matching `counters` (Rogier's own comeback lines). Everything else
-(HP bars, badge case, flow) just works with the new entry.
+No boring mileage-grinding. Every run is a **mission run**: running with challenges along the way (pull-ups at a playground, climbing a wall, carrying something heavy, stair sprints) — exactly what the Iron Viking demands, because that race is running plus ~100 obstacles. The phone comes along, everything gets filmed, and the pipeline turns it into shorts. The channel is the accountability machine: promising an audience you'll finish means you can't quit.
 
-## Run locally
+## Day counting
 
-```bash
-python -m http.server 8080
-# open http://localhost:8080/
-```
+**"Day X" is an episode counter, not a calendar.** Every training/content day = previous day + 1. Skipped a day? Nothing breaks — the next video is simply the next number. The countdown phrase is always relative: *"training until the Iron Viking Run in April."*
 
-## Deploy (Vercel)
+## Channel hook
 
-Framework preset **Other**, no build command. `vercel.json` handles clean
-routing.
+> "I'm training until I can finish the hardest obstacle race in the Netherlands — 42 km, 100+ obstacles. This is Day 1."
 
-## Files
-- `index.html` / `style.css` / `game.js` — the whole game (title, battle, badge case)
-- `rogier.png` / `trainer.png` — character sprites (shared with the other Datingmon games)
-- `vercel.json` — SPA-style rewrite
+The challenge is the brand — one fixed sentence, said the same way, every single video (see `content/CHANNEL_RESEARCH.md` for why).
