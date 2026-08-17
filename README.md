@@ -9,6 +9,8 @@ This repo is home base for the whole journey: the training plan, the content pla
 | File/folder | What it is |
 |---|---|
 | **[`START_HERE.md`](START_HERE.md)** | **👈 Open this one.** What's left before Day 1, and the daily routine on one page |
+| [`day-one.html`](day-one.html) | The same page, styled — open it in a browser, works offline, checkboxes stick |
+| [`CLAUDE.md`](CLAUDE.md) | Full project brief and decisions made — context for any new Claude Code session |
 | [`content/SCRIPTS.md`](content/SCRIPTS.md) | What to actually say: Day 1 script, daily template, hook bank, monthly recap structure |
 | [`TRAINING_PLAN.md`](TRAINING_PLAN.md) | The full training plan — built around fixed Tuesday calisthenics and Saturday parkour, with a steady running build-up |
 | [`content/CONTENT_PLAN.md`](content/CONTENT_PLAN.md) | YouTube/Instagram strategy, video formats, filming setup while running |

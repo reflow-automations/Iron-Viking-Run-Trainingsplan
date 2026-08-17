@@ -1,0 +1,764 @@
+<title>Iron Viking Day One</title>
+<style>
+  :root {
+    --ground: #EDEEEC;
+    --surface: #F7F8F6;
+    --sunken: #E2E4E0;
+    --ink: #171A19;
+    --ink-soft: #4A524E;
+    --iron: #5C6461;
+    --line: #CDD1CB;
+    --rust: #B4451F;
+    --rust-soft: #F0E0D8;
+    --pine: #2E6B4F;
+    --pine-soft: #DFEAE2;
+    --shadow: 0 1px 2px rgba(23,26,25,.06), 0 4px 14px rgba(23,26,25,.05);
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #131614;
+      --surface: #1C201D;
+      --sunken: #0E100F;
+      --ink: #E8EAE6;
+      --ink-soft: #A9B1AB;
+      --iron: #8B948E;
+      --line: #2E3431;
+      --rust: #E4703F;
+      --rust-soft: #331B12;
+      --pine: #6FBF95;
+      --pine-soft: #16251D;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #131614;
+    --surface: #1C201D;
+    --sunken: #0E100F;
+    --ink: #E8EAE6;
+    --ink-soft: #A9B1AB;
+    --iron: #8B948E;
+    --line: #2E3431;
+    --rust: #E4703F;
+    --rust-soft: #331B12;
+    --pine: #6FBF95;
+    --pine-soft: #16251D;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+    padding: 0 20px 80px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+
+  /* ---------- masthead ---------- */
+  header { padding-top: 44px; display: flex; flex-direction: column; gap: 14px; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin: 0;
+  }
+
+  h1 {
+    font-size: clamp(38px, 12vw, 62px);
+    line-height: .92;
+    letter-spacing: -.035em;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin: 0;
+  }
+  h1 em { font-style: normal; color: var(--rust); }
+
+  .standfirst { color: var(--ink-soft); margin: 0; max-width: 34rem; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: var(--iron);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    font-variant-numeric: tabular-nums;
+  }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- sections ---------- */
+  section { display: flex; flex-direction: column; gap: 18px; }
+
+  h2 {
+    font-size: 13px;
+    font-family: var(--mono);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--iron);
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  h3 { font-size: 18px; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+
+  p { margin: 0; }
+  .note { color: var(--ink-soft); font-size: 15px; }
+
+  /* ---------- gear done ---------- */
+  .done-strip {
+    background: var(--pine-soft);
+    border: 1px solid color-mix(in srgb, var(--pine) 28%, transparent);
+    border-radius: 3px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .done-strip .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--pine);
+  }
+  .done-items { display: flex; flex-wrap: wrap; gap: 6px 18px; font-weight: 600; }
+  .done-items span::before { content: "✓"; color: var(--pine); margin-right: 7px; font-weight: 700; }
+
+  /* ---------- numbered steps ---------- */
+  .steps { display: flex; flex-direction: column; gap: 14px; list-style: none; padding: 0; margin: 0; counter-reset: step; }
+
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 18px 18px 18px 16px;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 4px 14px;
+    box-shadow: var(--shadow);
+  }
+  .step::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--rust);
+    padding-top: 4px;
+    letter-spacing: .04em;
+  }
+  .step > * { grid-column: 2; }
+  .step-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+  .time {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--iron);
+    letter-spacing: .06em;
+    white-space: nowrap;
+  }
+  .step .note { margin-top: 6px; }
+  .step-first {
+    border-left: 3px solid var(--rust);
+    padding-left: 13px;
+  }
+
+  ul.checks { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 9px; }
+  ul.checks li { display: flex; align-items: flex-start; gap: 11px; }
+  input[type="checkbox"] {
+    appearance: none;
+    width: 20px; height: 20px;
+    margin: 1px 0 0;
+    flex: 0 0 auto;
+    border: 1.5px solid var(--iron);
+    border-radius: 2px;
+    background: var(--ground);
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+  }
+  input[type="checkbox"]::after {
+    content: "";
+    width: 10px; height: 6px;
+    border-left: 2px solid var(--ground);
+    border-bottom: 2px solid var(--ground);
+    transform: rotate(-45deg) translate(1px, -1px);
+    opacity: 0;
+  }
+  input[type="checkbox"]:checked { background: var(--pine); border-color: var(--pine); }
+  input[type="checkbox"]:checked::after { opacity: 1; }
+  input[type="checkbox"]:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+  label { cursor: pointer; }
+  input:checked + label { color: var(--iron); text-decoration: line-through; text-decoration-color: var(--line); }
+
+  .options { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+  .opt {
+    background: var(--sunken);
+    border-radius: 3px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .opt .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--iron);
+  }
+  .opt.pick { background: var(--rust-soft); }
+  .opt.pick .tag { color: var(--rust); }
+  .opt q { font-weight: 600; quotes: "“" "”"; }
+
+  .fill {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--iron);
+    border-bottom: 1px dashed var(--line);
+    padding-bottom: 3px;
+    margin-top: 12px;
+  }
+
+  .handles { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+  .handles code {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    background: var(--sunken);
+    border-radius: 2px;
+    padding: 5px 9px;
+    color: var(--ink);
+  }
+
+  /* ---------- routine timeline ---------- */
+  .phase { display: flex; flex-direction: column; gap: 10px; }
+  .phase-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--rust);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .phase-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  ol.beats { list-style: none; counter-reset: beat; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  ol.beats li {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 12px;
+    align-items: baseline;
+  }
+  ol.beats li::before {
+    counter-increment: beat;
+    content: counter(beat);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--iron);
+    background: var(--sunken);
+    border-radius: 50%;
+    width: 24px; height: 24px;
+    display: grid;
+    place-content: center;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hero-rule {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--rust);
+    border-radius: 3px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .hero-rule .label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--rust);
+  }
+  .hero-rule strong { font-size: 18px; }
+
+  /* ---------- script ---------- */
+  .premise {
+    background: var(--ink);
+    color: var(--ground);
+    border-radius: 3px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .premise .label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--rust);
+  }
+  .premise q {
+    font-size: clamp(19px, 5.2vw, 24px);
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -.015em;
+    quotes: "“" "”";
+    text-wrap: balance;
+  }
+  .premise .sub { font-size: 14px; color: color-mix(in srgb, var(--ground) 62%, transparent); }
+
+  .clip {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .clip-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--iron);
+  }
+  .clip-head b { color: var(--rust); font-weight: 600; }
+  .clip blockquote {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.5;
+    border-left: 2px solid var(--line);
+    padding-left: 14px;
+  }
+  .clip blockquote span { display: block; }
+
+  .beat-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .beat-table th {
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--iron);
+    font-weight: 500;
+    padding: 0 10px 9px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .beat-table td { padding: 11px 10px 11px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .beat-table td:first-child {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--rust);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .beat-table tr:last-child td { border-bottom: none; }
+  .scroll-x { overflow-x: auto; }
+
+  details {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 0;
+  }
+  summary {
+    cursor: pointer;
+    padding: 15px 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    font-family: var(--mono);
+    color: var(--rust);
+    font-size: 18px;
+    line-height: 1;
+  }
+  details[open] summary::after { content: "–"; }
+  summary:focus-visible { outline: 2px solid var(--rust); outline-offset: -2px; }
+  .details-body { padding: 0 18px 18px; display: flex; flex-direction: column; gap: 16px; }
+
+  .hook-group { display: flex; flex-direction: column; gap: 7px; }
+  .hook-group .label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--iron);
+  }
+  .hook-group ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+  .hook-group li { font-size: 15.5px; }
+
+  .never {
+    background: var(--rust-soft);
+    border-radius: 3px;
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+  .never b { color: var(--rust); }
+
+  /* ---------- bad day ---------- */
+  .bad-day {
+    background: var(--sunken);
+    border-radius: 3px;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bad-day .row { display: flex; flex-direction: column; gap: 4px; }
+  .bad-day .q { font-weight: 700; }
+  .bad-day .a { color: var(--ink-soft); font-size: 15.5px; }
+
+  /* ---------- numbers ---------- */
+  .numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+  .num { background: var(--surface); padding: 14px 16px; display: flex; flex-direction: column; gap: 3px; }
+  .num .k {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--iron);
+  }
+  .num .v { font-size: 19px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .num .v small { font-size: 13px; font-weight: 500; color: var(--ink-soft); letter-spacing: 0; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .05em;
+    color: var(--iron);
+    line-height: 1.7;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Road to Iron Viking</p>
+    <h1>Day <em>One</em></h1>
+    <p class="standfirst">Everything left before the first run, the routine for tomorrow morning, and the exact words to say into the camera.</p>
+    <div class="meta">
+      <span><b>42 km</b> · ~100 obstacles</span>
+      <span>Race <b>10 April 2027</b></span>
+      <span>Run 1: <b>1.5–2 km</b></span>
+    </div>
+  </header>
+
+  <div class="done-strip">
+    <span class="label">Already sorted</span>
+    <div class="done-items">
+      <span>Running vest</span>
+      <span>Phone mic</span>
+      <span>Grip tripod</span>
+    </div>
+    <p class="note">That was the hard part. What's left is about 45 minutes of couch work.</p>
+  </div>
+
+  <section>
+    <h2>Before Day 1 — in order</h2>
+    <ol class="steps">
+
+      <li class="step step-first">
+        <div class="step-head"><h3>Pick the handle</h3><span class="time">5 min</span></div>
+        <p class="note">Do this first — everything else depends on it. Same name has to be free on both YouTube and Instagram.</p>
+        <div class="handles">
+          <code>roadtoironviking</code>
+          <code>ironvikingjourney</code>
+          <code>42kviking</code>
+          <code>themissionrun</code>
+        </div>
+        <p class="fill">Your pick: ________________________</p>
+      </li>
+
+      <li class="step">
+        <div class="step-head"><h3>Lock the premise sentence</h3><span class="time">5 min</span></div>
+        <p class="note">The one line you open every video with, forever. Both reference channels built everything on this. Pick one, then never change it.</p>
+        <div class="options">
+          <div class="opt pick">
+            <span class="tag">Option A — clean, recommended</span>
+            <q>Day 12 of training until I can finish a 42 kilometre obstacle race.</q>
+          </div>
+          <div class="opt">
+            <span class="tag">Option B — audience stakes</span>
+            <q>Day 12 of training until I can finish a 42 kilometre obstacle race. One follow equals one pull-up.</q>
+            <p class="note">Grows faster — it's gagiegram's whole engine — but you owe the internet pull-ups.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="step">
+        <div class="step-head"><h3>Create the accounts</h3><span class="time">15 min</span></div>
+        <ul class="checks">
+          <li><input type="checkbox" id="c1"><label for="c1">Instagram — new account, bio = premise sentence + “April 2027”</label></li>
+          <li><input type="checkbox" id="c2"><label for="c2">YouTube channel — same handle, same bio</label></li>
+          <li><input type="checkbox" id="c3"><label for="c3">Install Strava (free tier is enough) + one test recording round the block</label></li>
+        </ul>
+      </li>
+
+      <li class="step">
+        <div class="step-head"><h3>Sort the file transfer</h3><span class="time">15 min</span></div>
+        <p class="note">Whatever is least annoying — cloud auto-upload from the camera roll beats a USB cable. Target is one fixed folder on your PC called <code>inbox</code>. That's what the edit project points at.</p>
+      </li>
+
+      <li class="step">
+        <div class="step-head"><h3>Test the whole loop once</h3><span class="time">10 min</span></div>
+        <p class="note">Film 20 seconds of nonsense → get it into <code>inbox</code> → hand it to the edit project → watch a short come out. Do this today, so tomorrow you're only running, not debugging.</p>
+      </li>
+
+    </ol>
+  </section>
+
+  <section>
+    <h2>Tomorrow morning</h2>
+
+    <div class="phase">
+      <span class="phase-label">Before you leave · 2 min</span>
+      <ol class="beats">
+        <li>Phone charged, in the vest</li>
+        <li>Strava on → start recording</li>
+        <li>Say the premise sentence into the camera</li>
+      </ol>
+    </div>
+
+    <div class="phase">
+      <span class="phase-label">During the run</span>
+      <ol class="beats">
+        <li><b>1.5–2 km.</b> That's the whole target. It should feel easy. Walk whenever you want.</li>
+        <li>Stop once at a bar or a wall → do the thing → film it</li>
+        <li>Talk whenever you have a thought. Rambling is fine — the pipeline cuts it down.</li>
+      </ol>
+      <div class="hero-rule">
+        <span class="label">Non-negotiable</span>
+        <strong>The signature shot</strong>
+        <p class="note">Three seconds of you running toward the camera. Same spot, same angle, every single session. This is what makes your month-three recap look incredible — rapid-cutting through rain, snow and different shirts is the strongest proof of consistency in this genre.</p>
+      </div>
+    </div>
+
+    <div class="phase">
+      <span class="phase-label">After · 3 min</span>
+      <ol class="beats">
+        <li>Screenshot the Strava result</li>
+        <li>Clips + screenshot → <code>inbox</code></li>
+        <li>Done. Claude Code does the rest.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>The script</h2>
+
+    <div class="premise">
+      <span class="label">Say this first — every video, same words</span>
+      <q>Day X of training until I can finish a 42 kilometre obstacle race.</q>
+      <p class="sub">First two seconds. No “hey guys”, no intro, no context. Day number always first.</p>
+    </div>
+
+    <p class="note">Day 1 in four separate clips, so you can redo one bit without redoing all of it. Target 35–45 seconds total.</p>
+
+    <div class="clip">
+      <div class="clip-head"><b>Clip 1</b><span>The hook — standing still, before the run</span></div>
+      <blockquote>
+        <span>“Day 1 of training until I can finish a 42 kilometre obstacle race.</span>
+        <span>A hundred obstacles. Next April. And I can't run.”</span>
+      </blockquote>
+    </div>
+
+    <div class="clip">
+      <div class="clip-head"><b>Clip 2</b><span>The honest bit — this is what people follow for</span></div>
+      <blockquote>
+        <span>“I'm not a runner. I've never been a runner. I do calisthenics, I do parkour — I can climb things, I can hang, I can pull myself over a wall.</span>
+        <span>But running? I hate running. Two kilometres and I'm done.”</span>
+      </blockquote>
+    </div>
+
+    <div class="clip">
+      <div class="clip-head"><b>Clip 3</b><span>The plan and the stakes</span></div>
+      <blockquote>
+        <span>“So here's the plan: every single session goes on this channel. The good ones and the ones where I fall over.</span>
+        <span>Today I'm running two kilometres. In April I need to do forty-two — with a hundred obstacles in between.”</span>
+      </blockquote>
+    </div>
+
+    <div class="clip">
+      <div class="clip-head"><b>Clip 4</b><span>The CTA — after the run, sweaty, out of breath</span></div>
+      <blockquote>
+        <span>“This is day 1. This is what I look like, this is what two kilometres does to me.</span>
+        <span>Follow, and hold me to it.”</span>
+      </blockquote>
+    </div>
+
+    <div class="hero-rule">
+      <span class="label">Also film today — costs 30 seconds, worth months</span>
+      <p class="note">The “before” body shot, front and side, same spot and light (you'll re-shoot this monthly) · the signature shot · your Strava screenshot from run #1.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Every day after</h2>
+    <p class="note">Three beats, 20–40 seconds, never longer.</p>
+    <div class="scroll-x">
+      <table class="beat-table">
+        <thead>
+          <tr><th>Length</th><th>Beat</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>3 sec</td><td><strong>Premise sentence</strong> + one line of drama</td></tr>
+          <tr><td>15–30 sec</td><td><strong>The thing</strong> — the run, the mission, the fail, the wall</td></tr>
+          <tr><td>3–5 sec</td><td><strong>One honest line</strong> — how it felt, what hurt, what surprised you</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <details>
+      <summary>Hook bank — the line right after “Day X of…”</summary>
+      <div class="details-body">
+        <div class="hook-group">
+          <span class="label">Struggle</span>
+          <ul>
+            <li>“…and today was the worst one so far.”</li>
+            <li>“…and I nearly didn't go.”</li>
+            <li>“…and I just got overtaken by a guy walking his dog.”</li>
+          </ul>
+        </div>
+        <div class="hook-group">
+          <span class="label">Drama</span>
+          <ul>
+            <li>“…and I did something stupid.”</li>
+            <li>“…and someone in the comments said I'd have quit by now.”</li>
+            <li>“…and I found the perfect wall.”</li>
+          </ul>
+        </div>
+        <div class="hook-group">
+          <span class="label">Progress</span>
+          <ul>
+            <li>“…and today I ran further than I ever have in my life.”</li>
+            <li>“…and something clicked.”</li>
+          </ul>
+        </div>
+        <div class="hook-group">
+          <span class="label">Excuses, turned into content</span>
+          <ul>
+            <li>“…and I have a headache, so today is a walk. It still counts.”</li>
+            <li>“…and I'm on holiday, so today is a mountain.”</li>
+            <li>“…and it's raining. Going anyway.”</li>
+          </ul>
+        </div>
+        <p class="never"><b>Never open with:</b> “hey guys”, “so today I…”, “welcome back”, or an apology for not posting.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Monthly milestone video — the one that actually grows the channel</summary>
+      <div class="details-body">
+        <p class="note">The dailies keep you honest; these get the views. One a month, 25–35 seconds, built on gagiegram's structure.</p>
+        <div class="scroll-x">
+          <table class="beat-table">
+            <tbody>
+              <tr><td>0:00–0:03</td><td>“One month ago I promised the internet I'd finish a 42 kilometre obstacle race.”</td></tr>
+              <tr><td>0:03–0:08</td><td>“A hundred obstacles. And I couldn't run two kilometres.”</td></tr>
+              <tr><td>0:08–0:12</td><td>“I had no idea what I was doing. So I did something pretty stupid — I told everyone.”</td></tr>
+              <tr><td>0:12–0:15</td><td>“Every session goes online until race day.”</td></tr>
+              <tr><td>0:15–0:20</td><td><strong>Proof</strong> — stats overlay (total km, longest run, pull-ups) + before/after side by side</td></tr>
+              <tr><td>0:21–0:26</td><td>“I'm nowhere near ready. Follow and watch me suffer.”</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">15+ cuts in 26 seconds. Rapid-cut through weather and outfits — that's what the daily signature shot is for. Pop-on captions, one bold word at a time, centred. Looking tired reads as honest.</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>When your head isn't cooperating</h2>
+    <div class="bad-day">
+      <div class="row">
+        <span class="q">Headache, bad day, just not feeling it</span>
+        <span class="a">Go for a walk and film 15 seconds saying exactly that. It still counts as a Day. “The internet thinks I'm lying” and “I should have kept my mouth shut” are two of gagiegram's best-performing videos — honesty is the content.</span>
+      </div>
+      <div class="row">
+        <span class="q">Missed several days</span>
+        <span class="a">Nothing is broken. The counter is sequential, not calendar-based — you skipped nothing, the next video is just the next number.</span>
+      </div>
+      <div class="row">
+        <span class="q">Overwhelmed by the list</span>
+        <span class="a">Do step 1 and step 3. The rest can wait a day.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The numbers</h2>
+    <div class="numbers">
+      <div class="num"><span class="k">Race</span><span class="v">42 km <small>~100 obstacles</small></span></div>
+      <div class="num"><span class="k">Date</span><span class="v">10 Apr 2027 <small>Saturday</small></span></div>
+      <div class="num"><span class="k">Runs / week</span><span class="v">3 <small>Mon · Wed · Sun</small></span></div>
+      <div class="num"><span class="k">Week 1 distance</span><span class="v">1.5–2 km <small>per run</small></span></div>
+      <div class="num"><span class="k">Fixed anchors</span><span class="v">Tue + Sat <small>calisthenics · parkour</small></span></div>
+      <div class="num"><span class="k">Posting</span><span class="v">5–7 / week <small>+1 milestone/month</small></span></div>
+    </div>
+  </section>
+
+  <footer>
+    Full detail lives in the repo — TRAINING_PLAN.md, CONTENT_PLAN.md, CHANNEL_RESEARCH.md, PIPELINE.md.<br>
+    Tick boxes save on this device.
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var boxes = document.querySelectorAll('input[type="checkbox"]');
+    var KEY = 'ivr-day-one-';
+    boxes.forEach(function (box) {
+      try {
+        if (localStorage.getItem(KEY + box.id) === '1') box.checked = true;
+      } catch (e) {}
+      box.addEventListener('change', function () {
+        try {
+          localStorage.setItem(KEY + box.id, box.checked ? '1' : '0');
+        } catch (e) {}
+      });
+    });
+  })();
+</script>
